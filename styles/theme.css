@@ -1,0 +1,87 @@
+/**
+ * UTT Student Market - Design Tokens & Brand Theme
+ * Trường Đại học Công nghệ Giao thông Vận tải (UTT)
+ * Slogan: "Mua bán thông minh – Sinh viên cùng phát triển"
+ */
+
+:root {
+  /* Brand Primary Colors (From UTT Brand Identity) */
+  --utt-blue-dark: #0f1d4a;     /* Deep UTT Navy Blue */
+  --utt-blue-primary: #162b75;  /* Main UTT Blue */
+  --utt-blue-light: #24419e;    /* Hover Blue */
+  --utt-blue-subtle: #eef2ff;   /* Soft Ice Blue */
+
+  /* Energetic Accent Colors */
+  --utt-orange-primary: #ff7a00; /* Energetic UTT Student Orange */
+  --utt-orange-hover: #e66b00;
+  --utt-orange-light: #fff7ed;
+  --utt-orange-gradient: linear-gradient(135deg, #ff7a00 0%, #ff5500 100%);
+
+  /* Neutrals & Surfaces */
+  --utt-bg-body: #f8fafc;
+  --utt-surface-card: #ffffff;
+  --utt-surface-alt: #f1f5f9;
+  --utt-border-subtle: #e2e8f0;
+  --utt-border-strong: #cbd5e1;
+
+  /* Typography */
+  --utt-text-primary: #0f172a;
+  --utt-text-secondary: #475569;
+  --utt-text-muted: #64748b;
+  --utt-text-inverse: #ffffff;
+
+  /* Status Colors */
+  --utt-status-success: #10b981;
+  --utt-status-warning: #f59e0b;
+  --utt-status-error: #ef4444;
+  --utt-status-info: #0ea5e9;
+
+  /* Radius & Shadows */
+  --utt-radius-xs: 4px;
+  --utt-radius-sm: 8px;
+  --utt-radius-md: 12px;
+  --utt-radius-lg: 16px;
+  --utt-radius-full: 9999px;
+
+  --utt-shadow-sm: 0 1px 3px rgba(15, 29, 74, 0.08);
+  --utt-shadow-md: 0 4px 14px rgba(15, 29, 74, 0.1);
+  --utt-shadow-lg: 0 10px 25px rgba(15, 29, 74, 0.15);
+  --utt-shadow-glow: 0 0 20px rgba(255, 122, 0, 0.35);
+
+  /* Layout */
+  --utt-max-width: 1240px;
+  --utt-transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--utt-bg-body);
+  color: var(--utt-text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--utt-orange-primary);
+  outline-offset: 2px;
+}

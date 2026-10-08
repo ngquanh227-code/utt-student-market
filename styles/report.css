@@ -1,0 +1,367 @@
+/**
+ * UTT Student Market - Project Report & BMC Presentation Styles
+ * Designed for Nhóm 4 project presentation & academic review
+ */
+
+.report-section {
+  display: none;
+  padding: 30px 0 60px;
+}
+
+.report-section.active {
+  display: block;
+}
+
+.report-lead-card {
+  background: #ffffff;
+  border-radius: var(--utt-radius-md);
+  padding: 32px;
+  box-shadow: var(--utt-shadow-md);
+  border: 1px solid var(--utt-border-subtle);
+  margin-bottom: 30px;
+}
+
+.report-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--utt-blue-subtle);
+  color: var(--utt-blue-primary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.report-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--utt-blue-dark);
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.report-desc {
+  font-size: 15px;
+  color: var(--utt-text-secondary);
+  line-height: 1.6;
+  max-width: 900px;
+}
+
+/* Infographic Display Container */
+.infographic-wrapper {
+  background: #ffffff;
+  border-radius: var(--utt-radius-md);
+  padding: 24px;
+  box-shadow: var(--utt-shadow-md);
+  border: 1px solid var(--utt-border-subtle);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.infographic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--utt-border-subtle);
+}
+
+.infographic-header h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--utt-blue-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.infographic-img {
+  width: 100%;
+  max-width: 1050px;
+  height: auto;
+  border-radius: var(--utt-radius-sm);
+  border: 1px solid var(--utt-border-subtle);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  cursor: zoom-in;
+  transition: transform var(--utt-transition);
+}
+
+.infographic-img:hover {
+  transform: scale(1.01);
+}
+
+/* 9-Block Interactive Business Model Canvas */
+.bmc-interactive-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.bmc-block {
+  background: #ffffff;
+  border-radius: var(--utt-radius-sm);
+  padding: 16px;
+  border: 2px solid var(--utt-border-subtle);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--utt-shadow-sm);
+  transition: all var(--utt-transition);
+}
+
+.bmc-block:hover {
+  border-color: var(--utt-orange-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--utt-shadow-md);
+}
+
+.bmc-block-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--utt-border-subtle);
+}
+
+.bmc-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.bmc-list {
+  list-style: none;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--utt-text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bmc-list li {
+  position: relative;
+  padding-left: 14px;
+}
+
+.bmc-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--utt-orange-primary);
+  font-weight: bold;
+}
+
+/* Color codes matching original BMC image */
+.bmc-seg .bmc-num { background: #8b5cf6; }
+.bmc-prop .bmc-num { background: #f59e0b; }
+.bmc-chan .bmc-num { background: #0ea5e9; }
+.bmc-rel .bmc-num { background: #10b981; }
+.bmc-rev .bmc-num { background: #ec4899; }
+.bmc-res .bmc-num { background: #06b6d4; }
+.bmc-act .bmc-num { background: #f97316; }
+.bmc-part .bmc-num { background: #ef4444; }
+.bmc-cost .bmc-num { background: #3b82f6; }
+
+/* 11 Steps Flow Grid */
+.flow-11-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.flow-step-card {
+  background: #ffffff;
+  border-radius: var(--utt-radius-sm);
+  padding: 16px;
+  border-left: 4px solid var(--utt-blue-primary);
+  box-shadow: var(--utt-shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.flow-step-num {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--utt-orange-primary);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.flow-step-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--utt-blue-dark);
+  margin-bottom: 6px;
+}
+
+.flow-step-desc {
+  font-size: 12px;
+  color: var(--utt-text-secondary);
+  line-height: 1.4;
+}
+
+/* Financial Distribution Chart Visual */
+.finance-distribution-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.pie-visual-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pie-bar-item {
+  background: #ffffff;
+  border: 1px solid var(--utt-border-subtle);
+  border-radius: var(--utt-radius-sm);
+  padding: 14px 18px;
+}
+
+.pie-bar-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.pie-progress {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pie-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+/* Tables for Risks & KPIs */
+.report-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: var(--utt-radius-sm);
+  overflow: hidden;
+  box-shadow: var(--utt-shadow-sm);
+  margin-bottom: 24px;
+  border: 1px solid var(--utt-border-subtle);
+  font-size: 13px;
+}
+
+.report-data-table th, .report-data-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--utt-border-subtle);
+}
+
+.report-data-table th {
+  background: var(--utt-blue-dark);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.report-data-table tr:hover td {
+  background: #f8fafc;
+}
+
+.table-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tag-warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.tag-success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+/* 6-Stage Roadmap */
+.roadmap-timeline {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.roadmap-card {
+  background: #ffffff;
+  border: 1px solid var(--utt-border-subtle);
+  border-radius: var(--utt-radius-sm);
+  padding: 14px;
+  position: relative;
+  border-top: 4px solid var(--utt-blue-primary);
+}
+
+.roadmap-card.active {
+  border-top-color: var(--utt-orange-primary);
+}
+
+.roadmap-phase {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--utt-orange-primary);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.roadmap-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--utt-blue-dark);
+  margin-bottom: 6px;
+}
+
+.roadmap-desc {
+  font-size: 11px;
+  color: var(--utt-text-secondary);
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .bmc-interactive-grid {
+    grid-template-columns: 1fr;
+  }
+  .flow-11-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+  .roadmap-timeline {
+    grid-template-columns: 1fr 1fr;
+  }
+  .finance-distribution-grid {
+    grid-template-columns: 1fr;
+  }
+}

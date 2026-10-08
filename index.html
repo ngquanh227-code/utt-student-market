@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTT STUDENT MARKET | Mua bán thông minh – Sinh viên cùng phát triển</title>
+  <meta name="description" content="Nền tảng mua bán, trao đổi đồ dùng và giáo trình học tập dành riêng cho cộng đồng sinh viên Trường Đại học Công nghệ Giao thông Vận tải (UTT) - Dự án Nhóm 4.">
+
+  <!-- Core Theme & Layout Stylesheets -->
+  <link rel="stylesheet" href="styles/theme.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/report.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff7a00'><path d='M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h6v2c0 .55.45 1 1 1s1-.45 1-1V8h2v12z'/></svg>">
+</head>
+<body>
+
+  <!-- Top Utility Header -->
+  <header class="utt-header" role="banner">
+    <div class="utt-top-utility">
+      <div class="utt-container utt-top-utility-inner">
+        <div class="utt-utility-left">
+          <span>🏫 <strong>Trường ĐH Công Nghệ Giao Thông Vận Tải (UTT)</strong></span>
+          <span>•</span>
+          <span>Dự án khởi nghiệp sinh viên: <strong>Nhóm 4</strong></span>
+          <span>•</span>
+          <span class="utt-campus-badge">📍 3 Cơ sở: Hà Nội (Triều Khúc) | Vĩnh Yên | Thái Nguyên</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:16px;">
+          <span style="color:#94a3b8; font-size:11px;">100% Xác thực thẻ SV UTT</span>
+          <span style="color:#64748b;">|</span>
+          <a href="#section-overview" onclick="document.querySelectorAll('.utt-mode-tab')[1].click()" style="color:#ff9d42; font-weight:600; text-decoration:none;">📑 Xem Báo Cáo Ý Tưởng</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="utt-container">
+      <div class="utt-nav-bar">
+        <!-- Logo & Brand -->
+        <a href="index.html" class="utt-brand-logo">
+          <img src="assets/utt_market_banner.jpg" alt="Logo UTT Student Market" class="utt-logo-img">
+          <div class="utt-brand-text">
+            <span class="utt-brand-name">UTT STUDENT <span>MARKET</span></span>
+            <span class="utt-brand-slogan">Mua bán thông minh – Sinh viên cùng phát triển</span>
+          </div>
+        </a>
+
+        <!-- Switcher: Live Marketplace vs Project Report -->
+        <div class="utt-app-modes" role="tablist">
+          <button class="utt-mode-tab active" data-mode="storefront" role="tab">
+            🛍️ Chợ Sinh Viên UTT (Live Demo)
+          </button>
+          <button class="utt-mode-tab" data-mode="report" role="tab">
+            📋 Báo Cáo & Mô Hình Dự Án
+          </button>
+        </div>
+
+        <!-- Post Action Button -->
+        <div class="utt-header-actions">
+          <button id="header-post-btn" class="utt-btn-post" type="button">
+            ➕ Đăng Tin Thanh Lý
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sub Navigation for Project Report Sections (Visible when viewing report) -->
+    <nav id="report-subnav-bar" class="utt-report-subnav" style="display:none;" aria-label="Điều hướng báo cáo dự án">
+      <ul class="utt-subnav-list">
+        <li><a class="utt-subnav-link active" data-target="overview">1. Tổng Quan Dự Án</a></li>
+        <li><a class="utt-subnav-link" data-target="problems">2. Vấn Đề & Giải Pháp</a></li>
+        <li><a class="utt-subnav-link" data-target="bmc">3. Business Model Canvas</a></li>
+        <li><a class="utt-subnav-link" data-target="process">4. Quy Trình 11 Bước & An Toàn</a></li>
+        <li><a class="utt-subnav-link" data-target="finance">5. Doanh Thu & Tài Chính</a></li>
+        <li><a class="utt-subnav-link" data-target="roadmap">6. Lộ Trình & KPIs</a></li>
+        <li><a class="utt-subnav-link" data-target="risks">7. Rủi Ro & Kết Luận</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       TAB 1: LIVE STOREFRONT (SÀN GIAO DỊCH SINH VIÊN UTT)
+       ============================================================ -->
+  <main id="storefront-view" class="utt-container">
+    <!-- Hero Banner with Stats -->
+    <section class="utt-hero">
+      <div class="utt-hero-content">
+        <div>
+          <span class="utt-hero-tag">Chợ số dành riêng cho sinh viên UTT</span>
+          <h1 class="utt-hero-title">
+            Thanh Lý Nhanh • Mua Tiết Kiệm<br>
+            <span>Sinh Viên UTT Cùng Phát Triển</span>
+          </h1>
+          <p class="utt-hero-desc">
+            Không lo bài trôi trên Facebook, không sợ lừa đảo cọc tiền. UTT Student Market kết nối trực tiếp sinh viên 3 cơ sở (Hà Nội, Vĩnh Yên, Thái Nguyên) với hồ sơ sinh viên đã xác thực!
+          </p>
+          <div class="utt-hero-stats">
+            <div>
+              <div class="utt-stat-val">1.250+</div>
+              <div class="utt-stat-lbl">Sinh viên UTT tham gia</div>
+            </div>
+            <div>
+              <div class="utt-stat-val">850+</div>
+              <div class="utt-stat-lbl">Đồ dùng đã trao đổi</div>
+            </div>
+            <div>
+              <div class="utt-stat-val">100%</div>
+              <div class="utt-stat-lbl">Xác thực qua thẻ SV</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="utt-hero-banner-frame">
+          <img src="assets/utt_market_banner.jpg" alt="UTT Student Market Banner Nhóm 4">
+        </div>
+      </div>
+    </section>
+
+    <!-- Search & Filter Controls -->
+    <section class="utt-search-section">
+      <div class="utt-search-input-wrap">
+        <span class="utt-search-icon">🔍</span>
+        <input 
+          id="search-input-box" 
+          type="text" 
+          placeholder="Tìm giáo trình, máy tính Casio, bàn phím, đồ phòng trọ UTT..."
+        >
+      </div>
+
+      <select id="campus-select-box" class="utt-filter-select" aria-label="Lọc theo cơ sở trường UTT">
+        <option value="all">📍 Tất cả cơ sở UTT</option>
+        <option value="hanoi">📍 Cơ sở Hà Nội (54 Triều Khúc, Thanh Xuân)</option>
+        <option value="vinhyen">📍 Cơ sở Vĩnh Yên (Vĩnh Phúc)</option>
+        <option value="thainguyen">📍 Cơ sở Thái Nguyên</option>
+      </select>
+
+      <button class="utt-btn-post" type="button" onclick="document.getElementById('header-post-btn').click()">
+        ➕ Đăng đồ muốn bán / cho tặng
+      </button>
+    </section>
+
+    <!-- Category Carousel Filter -->
+    <nav id="category-pills-container" class="utt-category-scroll" aria-label="Danh mục sản phẩm sinh viên">
+      <!-- Injected by app.js -->
+    </nav>
+
+    <!-- Products Live Grid -->
+    <section>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h2 style="font-size:18px; font-weight:800; color:var(--utt-blue-dark); display:flex; align-items:center; gap:8px;">
+          <span>🔥 Đồ Dùng Sinh Viên Đang Thanh Lý Mới Nhất</span>
+        </h2>
+        <span style="font-size:12px; color:var(--utt-text-muted);">Ưu tiên nhận trực tiếp tại sảnh giảng đường & ký túc xá</span>
+      </div>
+
+      <div id="utt-products-grid" class="utt-product-grid">
+        <!-- Injected by app.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       TAB 2: PROJECT REPORT SECTIONS (BÁO CÁO Ý TƯỞNG & MÔ HÌNH NHÓM 4)
+       ============================================================ -->
+  
+  <!-- 1. TỔNG QUAN DỰ ÁN -->
+  <section id="section-overview" class="report-section utt-container">
+    <div class="report-lead-card">
+      <span class="report-badge">Phần 1 • Dự án khởi nghiệp sinh viên UTT</span>
+      <h2 class="report-title">1. Tổng Quan Dự Án UTT Student Market</h2>
+      <p class="report-desc">
+        <strong>Tên dự án:</strong> UTT Student Market – Mua bán thông minh, sinh viên cùng phát triển.<br>
+        <strong>Đơn vị thực hiện:</strong> Dự án nhóm 4 — Trường Đại học Công nghệ Giao thông Vận tải (UTT).
+      </p>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; margin-top:24px;">
+        <div style="background:var(--utt-surface-alt); padding:20px; border-radius:8px; border-left:4px solid var(--utt-blue-primary);">
+          <h3 style="font-size:16px; font-weight:700; color:var(--utt-blue-dark); margin-bottom:8px;">🎯 1.1. Tầm nhìn</h3>
+          <p style="font-size:13px; line-height:1.6; color:var(--utt-text-secondary);">
+            Trở thành mô hình <strong>chợ sinh viên số đáng tin cậy, thuận tiện và an toàn</strong>, nơi sinh viên có thể mua – bán – trao đổi những sản phẩm phù hợp với nhu cầu học tập và đời sống tại tất cả các cơ sở của Trường Đại học Công nghệ Giao thông Vận tải.
+          </p>
+        </div>
+
+        <div style="background:var(--utt-surface-alt); padding:20px; border-radius:8px; border-left:4px solid var(--utt-orange-primary);">
+          <h3 style="font-size:16px; font-weight:700; color:var(--utt-blue-dark); margin-bottom:8px;">🚀 1.2. Sứ mệnh</h3>
+          <ul style="font-size:13px; line-height:1.6; color:var(--utt-text-secondary); padding-left:16px;">
+            <li>Kết nối sinh viên có nhu cầu mua với sinh viên có nhu cầu bán hoặc trao đổi.</li>
+            <li>Giúp sinh viên tiết kiệm chi phí thông qua thị trường đồ dùng đã qua sử dụng.</li>
+            <li>Tạo môi trường giao dịch minh bạch, có đánh giá và cơ chế hạn chế rủi ro.</li>
+            <li>Khuyến khích kinh tế tuần hoàn, giảm lãng phí tài nguyên và bảo vệ môi trường.</li>
+            <li>Tạo cơ hội rèn luyện kỹ năng kinh doanh, giao tiếp, marketing cho sinh viên.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. VẤN ĐỀ VÀ GIẢI PHÁP -->
+  <section id="section-problems" class="report-section utt-container">
+    <div class="report-lead-card">
+      <span class="report-badge">Phần 2 & 4 • Phân tích thực trạng</span>
+      <h2 class="report-title">2. Vấn Đề Sinh Viên Đang Gặp Phải & Giải Pháp UTT Student Market</h2>
+      <p class="report-desc">
+        Trong môi trường sinh viên UTT, nhu cầu mua bán và trao đổi diễn ra liên tục nhưng bị phân tán trên các nhóm Facebook, Zalo khiến bài đăng nhanh trôi và tiềm ẩn nhiều nguy cơ lừa đảo.
+      </p>
+
+      <table class="report-data-table" style="margin-top:24px;">
+        <thead>
+          <tr>
+            <th style="width:25%;">Vấn đề thực tế</th>
+            <th style="width:35%;">Biểu hiện & Tác động tiêu cực</th>
+            <th style="width:40%;">Giải pháp của UTT Student Market</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Khó tìm đúng sản phẩm</strong></td>
+            <td>Thông tin nằm rải rác ở nhiều nhóm, bài đăng nhanh trôi, mất thời gian tìm kiếm.</td>
+            <td><span class="table-tag tag-success">Đã giải quyết</span> Danh mục chuẩn hóa + Bộ lọc từ khóa, mức giá, tình trạng và cơ sở UTT.</td>
+          </tr>
+          <tr>
+            <td><strong>Khó kiểm chứng người bán</strong></td>
+            <td>Không biết người bán có thực sự là sinh viên UTT hay không, lịch sử uy tín ra sao.</td>
+            <td><span class="table-tag tag-success">Đã giải quyết</span> Xác thực qua thẻ sinh viên/email trường + Lịch sử số giao dịch hoàn tất.</td>
+          </tr>
+          <tr>
+            <td><strong>Nguy cơ lừa đảo cọc tiền</strong></td>
+            <td>Chuyển tiền cọc nhưng không nhận hàng, hàng không đúng mô tả, tài khoản biến mất.</td>
+            <td><span class="table-tag tag-success">Đã giải quyết</span> Cảnh báo hành vi bất thường, ưu tiên giao dịch trực tiếp tại trường, cơ chế báo cáo.</td>
+          </tr>
+          <tr>
+            <td><strong>Thông tin bài đăng thiếu thống nhất</strong></td>
+            <td>Bài đăng thiếu giá, không rõ tình trạng, không có ảnh chụp thực tế hoặc địa điểm nhận.</td>
+            <td><span class="table-tag tag-success">Đã giải quyết</span> Mẫu đăng tin bắt buộc: tên, giá, ảnh chụp, tình trạng, cơ sở đào tạo.</td>
+          </tr>
+          <tr>
+            <td><strong>Khó xử lý tranh chấp</strong></td>
+            <td>Khi có mâu thuẫn, người mua và người bán tự cãi nhau, không có đầu mối trung gian hỗ trợ.</td>
+            <td><span class="table-tag tag-success">Đã giải quyết</span> Lưu lịch sử trao đổi, kênh báo cáo khiếu nại và quy trình xử lý minh bạch.</td>
+          </tr>
+          <tr>
+            <td><strong>Đồ cũ bị lãng phí</strong></td>
+            <td>Nhiều giáo trình, đồ gia dụng còn rất tốt bị vứt bỏ vì sinh viên không biết bán cho ai.</td>
+            <td><span class="table-tag tag-success">Đã giải quyết</span> Tạo chuyên mục [Cho - Tặng 0đ] và trao đổi đồ dùng, khuyến khích tái sử dụng.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. BUSINESS MODEL CANVAS (9 KHỐI) -->
+  <section id="section-bmc" class="report-section utt-container">
+    <div class="report-lead-card">
+      <span class="report-badge">Phần 9 • Mô hình kinh doanh</span>
+      <h2 class="report-title">3. Business Model Canvas (UTT Student Market)</h2>
+      <p class="report-desc">
+        Business Model Canvas của dự án được xây dựng theo 9 thành phần tiêu chuẩn, thể hiện cách dự án tạo ra giá trị, cung cấp giá trị và tạo nguồn thu bền vững.
+      </p>
+    </div>
+
+    <!-- Infographic Display Image from User Upload -->
+    <div class="infographic-wrapper">
+      <div class="infographic-header">
+        <h3><span>🖼️ Infographic Business Model Canvas Nhóm 4 (Nhấp ảnh để phóng to)</span></h3>
+        <span style="font-size:12px; color:var(--utt-text-muted);">Hình ảnh gốc do Nhóm 4 thiết kế</span>
+      </div>
+      <img src="assets/business_model_canvas.jpg" alt="Business Model Canvas UTT Student Market" class="infographic-img zoomable-infographic">
+    </div>
+
+    <!-- Interactive 9-Block Grid -->
+    <div class="bmc-interactive-grid">
+      <!-- 1. Customer Segments -->
+      <div class="bmc-block bmc-seg">
+        <div class="bmc-block-header">
+          <span class="bmc-num">1</span>
+          <span>Phân khúc khách hàng</span>
+        </div>
+        <ul class="bmc-list">
+          <li>Sinh viên UTT các năm (1, 2, 3, 4).</li>
+          <li>Người mua: cần sách, đồ dùng, điện tử...</li>
+          <li>Người bán: muốn thanh lý, trao đổi đồ.</li>
+          <li>Cửa hàng, doanh nghiệp quanh trường.</li>
+        </ul>
+      </div>
+
+      <!-- 2. Value Propositions -->
+      <div class="bmc-block bmc-prop">
+        <div class="bmc-block-header">
+          <span class="bmc-num">2</span>
+          <span>Giá trị cung cấp</span>
+        </div>
+        <ul class="bmc-list">
+          <li>Mua bán nhanh chóng, tiện lợi, tiết kiệm.</li>
+          <li>Thanh lý và tái sử dụng đồ cũ.</li>
+          <li>Giao dịch an toàn, minh bạch trong trường.</li>
+          <li>Kết nối cộng đồng sinh viên UTT.</li>
+          <li>Giảm lãng phí, bảo vệ môi trường.</li>
+        </ul>
+      </div>
+
+      <!-- 3. Channels -->
+      <div class="bmc-block bmc-chan">
+        <div class="bmc-block-header">
+          <span class="bmc-num">3</span>
+          <span>Kênh tiếp cận</span>
+        </div>
+        <ul class="bmc-list">
+          <li>Ứng dụng / Website chính thức.</li>
+          <li>Nhóm, cộng đồng Facebook UTT.</li>
+          <li>Zalo, TikTok, Fanpage sinh viên.</li>
+          <li>Truyền thông tại trường (Poster, Standee, CLB).</li>
+        </ul>
+      </div>
+
+      <!-- 4. Customer Relationships -->
+      <div class="bmc-block bmc-rel">
+        <div class="bmc-block-header">
+          <span class="bmc-num">4</span>
+          <span>Quan hệ khách hàng</span>
+        </div>
+        <ul class="bmc-list">
+          <li>Hỗ trợ trực tuyến (chat, hotline).</li>
+          <li>Hệ thống đánh giá người mua / người bán.</li>
+          <li>Chăm sóc khách hàng định kỳ.</li>
+          <li>Xử lý khiếu nại, giải quyết tranh chấp.</li>
+        </ul>
+      </div>
+
+      <!-- 5. Revenue Streams -->
+      <div class="bmc-block bmc-rev">
+        <div class="bmc-block-header">
+          <span class="bmc-num">5</span>
+          <span>Dòng doanh thu</span>
+        </div>
+        <ul class="bmc-list">
+          <li>Phí dịch vụ: 2 - 5% / giao dịch thành công.</li>
+          <li>Tin đăng nổi bật: 5.000 - 20.000đ/lần.</li>
+          <li>Quảng cáo cửa hàng hướng tới sinh viên.</li>
+          <li>Gói thành viên Premium ưu tiên hiển thị.</li>
+        </ul>
+      </div>
+
+      <!-- 6. Key Resources -->
+      <div class="bmc-block bmc-res">
+        <div class="bmc-block-header">
+          <span class="bmc-num">6</span>
+          <span>Nguồn lực chính</span>
+        </div>
+        <ul class="bmc-list">
+          <li>Nền tảng công nghệ (website/app).</li>
+          <li>Đội ngũ vận hành, chăm sóc khách hàng.</li>
+          <li>Cơ sở dữ liệu người dùng UTT.</li>
+          <li>Hệ thống xác minh thẻ SV, bảo mật.</li>
+          <li>Thương hiệu UTT Student Market.</li>
+        </ul>
+      </div>
+
+      <!-- 7. Key Activities -->
+      <div class="bmc-block bmc-act">
+        <div class="bmc-block-header">
+          <span class="bmc-num">7</span>
+          <span>Hoạt động chính</span>
+        </div>
+        <ul class="bmc-list">
+          <li>Phát triển và duy trì nền tảng web.</li>
+          <li>Kiểm duyệt sản phẩm và nội dung tin đăng.</li>
+          <li>Xác minh tài khoản sinh viên.</li>
+          <li>Kết nối người mua – người bán.</li>
+          <li>Marketing, truyền thông thương hiệu.</li>
+        </ul>
+      </div>
+
+      <!-- 8. Key Partners -->
+      <div class="bmc-block bmc-part">
+        <div class="bmc-block-header">
+          <span class="bmc-num">8</span>
+          <span>Đối tác chính</span>
+        </div>
+        <ul class="bmc-list">
+          <li>Nhà trường / CLB sinh viên UTT.</li>
+          <li>Cửa hàng, quán ăn quanh trường (Triều Khúc).</li>
+          <li>Đơn vị vận chuyển (GHN, Viettel Post).</li>
+          <li>Đối tác thanh toán (MoMo, VNPay).</li>
+          <li>Nhà cung cấp công nghệ (hosting, bảo mật).</li>
+        </ul>
+      </div>
+
+      <!-- 9. Cost Structure -->
+      <div class="bmc-block bmc-cost">
+        <div class="bmc-block-header">
+          <span class="bmc-num">9</span>
+          <span>Cơ cấu chi phí</span>
+        </div>
+        <ul class="bmc-list">
+          <li>Phát triển & duy trì nền tảng app/web.</li>
+          <li>Máy chủ, cơ sở dữ liệu và bảo mật.</li>
+          <li>Chi phí marketing, truyền thông tại trường.</li>
+          <li>Chi phí nhân sự trực vận hành, kiểm duyệt.</li>
+          <li>Chi phí xử lý khiếu nại & chăm sóc khách hàng.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. QUY TRÌNH 11 BƯỚC & AN TOÀN -->
+  <section id="section-process" class="report-section utt-container">
+    <div class="report-lead-card">
+      <span class="report-badge">Phần 6 & 7 • Luồng nghiệp vụ chuẩn</span>
+      <h2 class="report-title">4. Sơ Đồ Quy Trình Mua – Bán & Cơ Chế Đảm Bảo An Toàn</h2>
+      <p class="report-desc">
+        Quy trình mua bán được thiết kế tinh gọn qua 11 bước rõ ràng, có điểm kiểm soát an toàn nhiều lớp để bảo vệ cả người mua và người bán.
+      </p>
+    </div>
+
+    <!-- Infographic Display Image from User Upload -->
+    <div class="infographic-wrapper">
+      <div class="infographic-header">
+        <h3><span>🔄 Sơ Đồ Quy Trình Mua – Bán UTT Student Market (Nhấp ảnh để phóng to)</span></h3>
+        <span style="font-size:12px; color:var(--utt-text-muted);">Biểu đồ luồng giao dịch 11 bước do Nhóm 4 thiết kế</span>
+      </div>
+      <img src="assets/quy_trinh_mua_ban.jpg" alt="Sơ đồ quy trình mua bán UTT Student Market" class="infographic-img zoomable-infographic">
+    </div>
+
+    <!-- 11 Steps Cards -->
+    <div class="flow-11-steps">
+      <div class="flow-step-card">
+        <span class="flow-step-num">Bước 1</span>
+        <h4 class="flow-step-name">Đăng Ký Tài Khoản</h4>
+        <p class="flow-step-desc">Người dùng nhập email sinh viên @utt.edu.vn hoặc SĐT để mở tài khoản.</p>
+      </div>
+
+      <div class="flow-step-card">
+        <span class="flow-step-num">Bước 2</span>
+        <h4 class="flow-step-name">Xác Minh Sinh Viên</h4>
+        <p class="flow-step-desc">Hệ thống đối chiếu thẻ sinh viên hoặc email trường để cấp tích xanh uy tín.</p>
+      </div>
+
+      <div class="flow-step-card">
+        <span class="flow-step-num">Bước 3</span>
+        <h4 class="flow-step-name">Hệ Thống Kiểm Duyệt</h4>
+        <p class="flow-step-desc">Kiểm duyệt tự động & thủ công: ảnh thực tế, giá cả, loại bỏ tin vi phạm.</p>
+      </div>
+
+      <div class="flow-step-card">
+        <span class="flow-step-num">Bước 4</span>
+        <h4 class="flow-step-name">Sản Phẩm Được Đăng</h4>
+        <p class="flow-step-desc">Hiển thị trực tiếp trên sàn theo đúng danh mục và cơ sở đào tạo.</p>
+      </div>
+
+      <div class="flow-step-card">
+        <span class="flow-step-num">Bước 5</span>
+        <h4 class="flow-step-name">Tìm Kiếm & Liên Hệ</h4>
+        <p class="flow-step-desc">Người mua xem thông tin, trò chuyện qua chat hoặc gọi điện trao đổi tình trạng.</p>
+      </div>
+
+      <div class="flow-step-card">
+        <span class="flow-step-num">Bước 6</span>
+        <h4 class="flow-step-name">Xác Nhận Đơn Hàng</h4>
+        <p class="flow-step-desc">Hai bên chốt giá bán hoặc vật phẩm trao đổi, thống nhất địa điểm hẹn gặp.</p>
+      </div>
+
+      <div class="flow-step-card">
+        <span class="flow-step-num">Bước 7</span>
+        <h4 class="flow-step-name">Thanh Toán An Toàn</h4>
+        <p class="flow-step-desc">Thanh toán trực tiếp khi gặp mặt hoặc qua tài khoản ký quỹ trung gian.</p>
+      </div>
+
+      <div class="flow-step-card">
+        <span class="flow-step-num">Bước 8</span>
+        <h4 class="flow-step-name">Giao Hàng / Gặp Mặt</h4>
+        <p class="flow-step-desc">Ưu tiên địa điểm đông người: sảnh nhà trường, thư viện UTT, cổng KTX.</p>
+      </div>
+
+      <div class="flow-step-card">
+        <span class="flow-step-num">Bước 9</span>
+        <h4 class="flow-step-name">Nhận & Kiểm Tra Hàng</h4>
+        <p class="flow-step-desc">Người mua kiểm tra kỹ chất lượng đúng như hình chụp và mô tả.</p>
+      </div>
+
+      <div class="flow-step-card">
+        <span class="flow-step-num">Bước 10</span>
+        <h4 class="flow-step-name">Xác Nhận Hoàn Tất</h4>
+        <p class="flow-step-desc">Hai bên bấm xác nhận giao dịch thành công trên ứng dụng.</p>
+      </div>
+
+      <div class="flow-step-card">
+        <span class="flow-step-num">Bước 11</span>
+        <h4 class="flow-step-name">Đánh Giá Uy Tín</h4>
+        <p class="flow-step-desc">Chấm điểm sao và viết nhận xét giúp cộng đồng nhận biết sinh viên uy tín.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. TÀI CHÍNH & DOANH THU -->
+  <section id="section-finance" class="report-section utt-container">
+    <div class="report-lead-card">
+      <span class="report-badge">Phần 8 • Dự toán tài chính</span>
+      <h2 class="report-title">5. Mô Hình Doanh Thu & Kế Hoạch Tài Chính</h2>
+      <p class="report-desc">
+        Trong giai đoạn đầu, dự án ưu tiên tăng trưởng người dùng và thanh khoản. Khi quy mô ổn định, nguồn thu được đa dạng hóa qua 5 kênh chính.
+      </p>
+    </div>
+
+    <div class="finance-distribution-grid">
+      <!-- Bảng ví dụ doanh thu 1 tháng -->
+      <div style="background:#fff; border-radius:8px; padding:20px; border:1px solid var(--utt-border-subtle); box-shadow:var(--utt-shadow-sm);">
+        <h3 style="font-size:16px; font-weight:700; color:var(--utt-blue-dark); margin-bottom:16px;">
+          💵 Kịch Bản Doanh Thu Giả Định (1 Tháng)
+        </h3>
+        <table class="report-data-table" style="margin-bottom:12px;">
+          <thead>
+            <tr>
+              <th>Hạng mục</th>
+              <th>Giả định</th>
+              <th>Doanh thu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Quảng cáo doanh nghiệp</strong></td>
+              <td>10 doanh nghiệp × 300.000đ</td>
+              <td style="font-weight:700; color:var(--utt-blue-primary);">3.000.000đ</td>
+            </tr>
+            <tr>
+              <td><strong>Tin đăng nổi bật</strong></td>
+              <td>50 bài × 30.000đ</td>
+              <td style="font-weight:700; color:var(--utt-blue-primary);">1.500.000đ</td>
+            </tr>
+            <tr>
+              <td><strong>Gian hàng sinh viên / CLB</strong></td>
+              <td>20 shop × 50.000đ</td>
+              <td style="font-weight:700; color:var(--utt-blue-primary);">1.000.000đ</td>
+            </tr>
+            <tr style="background:#fff7ed; font-size:14px;">
+              <td colspan="2"><strong>Tổng doanh thu 1 tháng:</strong></td>
+              <td style="font-weight:800; color:var(--utt-orange-primary);">5.500.000đ/tháng</td>
+            </tr>
+            <tr style="background:#eef2ff; font-size:14px;">
+              <td colspan="2"><strong>Quy đổi cả năm (12 tháng):</strong></td>
+              <td style="font-weight:800; color:var(--utt-blue-dark);">66.000.000đ/năm</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:11px; color:var(--utt-text-muted); font-style:italic;">* Đây là kịch bản tài chính giả định nghiên cứu của Nhóm 4, không phải cam kết doanh thu thực tế.</p>
+      </div>
+
+      <!-- Đề xuất phân bổ doanh thu -->
+      <div style="background:#fff; border-radius:8px; padding:20px; border:1px solid var(--utt-border-subtle); box-shadow:var(--utt-shadow-sm);">
+        <h3 style="font-size:16px; font-weight:700; color:var(--utt-blue-dark); margin-bottom:16px;">
+          📊 Đề Xuất Phân Bổ Doanh Thu (40 / 30 / 20 / 10)
+        </h3>
+        
+        <div class="pie-visual-bar-wrap">
+          <div class="pie-bar-item">
+            <div class="pie-bar-header">
+              <span>🛠️ Chi phí vận hành, minigame, sự kiện</span>
+              <span style="color:#f97316;">40% (2.200.000đ/tháng)</span>
+            </div>
+            <div class="pie-progress">
+              <div class="pie-fill" style="width:40%; background:#f97316;"></div>
+            </div>
+          </div>
+
+          <div class="pie-bar-item">
+            <div class="pie-bar-header">
+              <span>🚀 Tái đầu tư nền tảng, công nghệ & marketing</span>
+              <span style="color:#3b82f6;">30% (1.650.000đ/tháng)</span>
+            </div>
+            <div class="pie-progress">
+              <div class="pie-fill" style="width:30%; background:#3b82f6;"></div>
+            </div>
+          </div>
+
+          <div class="pie-bar-item">
+            <div class="pie-bar-header">
+              <span>🎓 Hoạt động sinh viên, hỗ trợ CLB, học bổng</span>
+              <span style="color:#10b981;">20% (1.100.000đ/tháng)</span>
+            </div>
+            <div class="pie-progress">
+              <div class="pie-fill" style="width:20%; background:#10b981;"></div>
+            </div>
+          </div>
+
+          <div class="pie-bar-item">
+            <div class="pie-bar-header">
+              <span>🛡️ Quỹ dự phòng rủi ro & giải quyết tranh chấp</span>
+              <span style="color:#64748b;">10% (550.000đ/tháng)</span>
+            </div>
+            <div class="pie-progress">
+              <div class="pie-fill" style="width:10%; background:#64748b;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. LỘ TRÌNH TRIỂN KHAI & KPIS -->
+  <section id="section-roadmap" class="report-section utt-container">
+    <div class="report-lead-card">
+      <span class="report-badge">Phần 11 & 12 • Kế hoạch hành động</span>
+      <h2 class="report-title">6. Lộ Trình 6 Giai Đoạn & Chỉ Số Đánh Giá (KPIs)</h2>
+      <p class="report-desc">
+        Dự án chia làm 6 giai đoạn rõ ràng nhằm kiểm soát rủi ro và đánh giá thanh khoản qua 9 chỉ số hiệu quả định lượng.
+      </p>
+    </div>
+
+    <!-- 6 Phases Timeline -->
+    <div class="roadmap-timeline">
+      <div class="roadmap-card">
+        <div class="roadmap-phase">GĐ 1</div>
+        <h4 class="roadmap-title">Khảo Sát</h4>
+        <p class="roadmap-desc">Khảo sát nhu cầu thực tế sinh viên 3 cơ sở; xác định nhóm sản phẩm có nhu cầu cao.</p>
+      </div>
+
+      <div class="roadmap-card">
+        <div class="roadmap-phase">GĐ 2</div>
+        <h4 class="roadmap-title">Thiết Kế Mô Hình</h4>
+        <p class="roadmap-desc">Hoàn thiện Value Proposition, quy trình mua bán, chính sách an toàn và BMC.</p>
+      </div>
+
+      <div class="roadmap-card active">
+        <div class="roadmap-phase">GĐ 3 (Hiện tại)</div>
+        <h4 class="roadmap-title">Xây Dựng MVP</h4>
+        <p class="roadmap-desc">Tạo phiên bản tối thiểu gồm đăng ký, đăng tin, tìm kiếm, nhắn tin và báo cáo.</p>
+      </div>
+
+      <div class="roadmap-card">
+        <div class="roadmap-phase">GĐ 4</div>
+        <h4 class="roadmap-title">Thử Nghiệm</h4>
+        <p class="roadmap-desc">Thử nghiệm với nhóm sinh viên K72-K74; theo dõi tỷ lệ chốt đơn và sự cố.</p>
+      </div>
+
+      <div class="roadmap-card">
+        <div class="roadmap-phase">GĐ 5</div>
+        <h4 class="roadmap-title">Mở Rộng</h4>
+        <p class="roadmap-desc">Mở rộng đồng bộ 3 cơ sở UTT, bổ sung tính năng thanh toán & giao nhận.</p>
+      </div>
+
+      <div class="roadmap-card">
+        <div class="roadmap-phase">GĐ 6</div>
+        <h4 class="roadmap-title">Tối Ưu Thu</h4>
+        <p class="roadmap-desc">Triển khai tin nổi bật, quảng bá và hợp tác dịch vụ khi lượng người dùng ổn định.</p>
+      </div>
+    </div>
+
+    <!-- KPIs Table -->
+    <h3 style="font-size:18px; font-weight:800; color:var(--utt-blue-dark); margin-bottom:12px;">
+      📈 9 Chỉ Số Đánh Giá Hiệu Quả (KPIs)
+    </h3>
+    <table class="report-data-table">
+      <thead>
+        <tr>
+          <th>Chỉ số đo lường</th>
+          <th>Mục đích phân tích</th>
+          <th>Kỳ vọng giai đoạn MVP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Số người dùng đăng ký</strong></td>
+          <td>Đo khả năng thu hút và lan tỏa cộng đồng sinh viên UTT.</td>
+          <td>&ge; 1.000 tài khoản sinh viên</td>
+        </tr>
+        <tr>
+          <td><strong>Số tin đăng sản phẩm</strong></td>
+          <td>Đo nguồn cung sản phẩm và mức độ sẵn sàng thanh lý đồ cũ.</td>
+          <td>&ge; 300 tin đăng/tháng</td>
+        </tr>
+        <tr>
+          <td><strong>Số lượt tìm kiếm / xem tin</strong></td>
+          <td>Đo mức độ hoạt động và nhu cầu tìm kiếm của sinh viên.</td>
+          <td>&ge; 5.000 lượt xem/tháng</td>
+        </tr>
+        <tr>
+          <td><strong>Số giao dịch hoàn tất</strong></td>
+          <td>Chỉ số quan trọng nhất phản ánh thanh khoản của chợ.</td>
+          <td>&ge; 150 giao dịch/tháng</td>
+        </tr>
+        <tr>
+          <td><strong>Tỷ lệ giao dịch thành công</strong></td>
+          <td>Đánh giá chất lượng kết nối người mua – người bán.</td>
+          <td>&ge; 70% tổng số đơn chốt</td>
+        </tr>
+        <tr>
+          <td><strong>Tỷ lệ người dùng quay lại</strong></td>
+          <td>Đánh giá độ gắn kết và khả năng giữ chân sinh viên.</td>
+          <td>&ge; 40% quay lại sau 30 ngày</td>
+        </tr>
+        <tr>
+          <td><strong>Điểm đánh giá trung bình</strong></td>
+          <td>Phản ánh mức độ hài lòng về chất lượng đồ dùng và thái độ giao dịch.</td>
+          <td>&ge; 4.6 / 5.0 sao</td>
+        </tr>
+        <tr>
+          <td><strong>Số báo cáo / 100 giao dịch</strong></td>
+          <td>Theo dõi rủi ro và chất lượng kiểm duyệt vận hành.</td>
+          <td>&le; 2 báo cáo / 100 giao dịch</td>
+        </tr>
+        <tr>
+          <td><strong>Doanh thu bình quân / giao dịch</strong></td>
+          <td>Đánh giá tiềm năng kinh doanh khi mở rộng dịch vụ trả phí.</td>
+          <td>Tối ưu từ giai đoạn 6</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 7. RỦI RO & KẾT LUẬN -->
+  <section id="section-risks" class="report-section utt-container">
+    <div class="report-lead-card">
+      <span class="report-badge">Phần 13 & 14 • Đánh giá bền vững</span>
+      <h2 class="report-title">7. Quản Trị Rủi Ro & Kết Luận Định Hướng Phát Triển</h2>
+      <p class="report-desc">
+        Xác định trước các rủi ro tiềm ẩn giúp Nhóm 4 chủ động chuẩn bị các phương án xử lý kịp thời và đảm bảo dự án phát triển lâu dài.
+      </p>
+
+      <table class="report-data-table" style="margin-top:20px;">
+        <thead>
+          <tr>
+            <th style="width:30%;">Rủi ro tiềm ẩn</th>
+            <th style="width:70%;">Phương án xử lý cụ thể của Nhóm 4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Ít người dùng ban đầu</strong></td>
+            <td>Tạo chiến dịch ra mắt, khuyến khích giới thiệu bạn bè, phối hợp với Đoàn Thanh niên / Hội Sinh viên / CLB và tập trung vào danh mục giáo trình năm nhất.</td>
+          </tr>
+          <tr>
+            <td><strong>Ít sản phẩm đăng bán</strong></td>
+            <td>Miễn phí đăng tin 100%, tặng gói tin nổi bật miễn phí thời gian đầu, truyền thông tới nhóm sinh viên năm cuối chuẩn bị tốt nghiệp/chuyển trọ.</td>
+          </tr>
+          <tr>
+            <td><strong>Tin giả / lừa đảo cọc tiền</strong></td>
+            <td>Bắt buộc xác thực sinh viên UTT, tích hợp bộ lọc kiểm duyệt từ khóa nhạy cảm, khuyến cáo giao dịch trực tiếp trong khuôn viên trường.</td>
+          </tr>
+          <tr>
+            <td><strong>Sản phẩm không đúng mô tả</strong></td>
+            <td>Yêu cầu chụp ít nhất 2 ảnh thực tế; khuyến nghị người mua kiểm tra hàng kỹ trước khi thanh toán; hỗ trợ kênh tiếp nhận khiếu nại.</td>
+          </tr>
+          <tr>
+            <td><strong>Chi phí vận hành cao</strong></td>
+            <td>Bắt đầu bằng phiên bản web MVP chi phí thấp, tận dụng hạ tầng miễn phí ban đầu, theo dõi chi phí theo từng người dùng.</td>
+          </tr>
+          <tr>
+            <td><strong>Bảo mật dữ liệu sinh viên</strong></td>
+            <td>Chỉ thu thập dữ liệu tối thiểu cần thiết, mã hóa thông tin liên lạc và xây dựng chính sách bảo mật tuân thủ quy định.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="background:#fff7ed; border-left:4px solid var(--utt-orange-primary); padding:20px; border-radius:6px; margin-top:24px;">
+        <h3 style="font-size:16px; font-weight:800; color:var(--utt-blue-dark); margin-bottom:8px;">
+          📌 Kết Luận Chung Dự Án Nhóm 4
+        </h3>
+        <p style="font-size:14px; line-height:1.6; color:var(--utt-text-secondary);">
+          <strong>UTT Student Market</strong> giải quyết đúng và trúng nhu cầu thiết thực của sinh viên Trường Đại học Công nghệ Giao thông Vận tải. Mô hình vừa giúp sinh viên tiết kiệm chi phí, giải phóng đồ dùng nhàn rỗi, vừa xây dựng một cộng đồng văn minh, an toàn và hỗ trợ lẫn nhau. Với lộ trình triển khai từng bước từ MVP đến mở rộng toàn trường, dự án hoàn toàn khả thi và có tiềm năng phát triển thành một hệ sinh thái tiện ích sinh viên toàn diện.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MODALS: POSTING, PRODUCT DETAIL, CHAT & IMAGE ZOOM
+       ============================================================ -->
+
+  <!-- Modal 1: Đăng Tin Mới -->
+  <div id="posting-modal" class="utt-modal" role="dialog" aria-modal="true" aria-labelledby="post-modal-title">
+    <div id="post-modal-backdrop" class="utt-modal-backdrop"></div>
+    <div class="utt-modal-dialog">
+      <div class="utt-modal-header">
+        <h3 id="post-modal-title">📝 Đăng Tin Thanh Lý Đồ Dùng UTT</h3>
+        <button id="close-post-modal-btn" class="utt-modal-close">✕</button>
+      </div>
+      <div class="utt-modal-body">
+        <form id="student-post-form">
+          <div style="margin-bottom:14px;">
+            <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px;">Tên đồ dùng / Giáo trình cần thanh lý *</label>
+            <input id="post-title-input" type="text" required placeholder="VD: Sách Sức bền vật liệu UTT / Máy tính Casio FX580..." style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:4px; font-size:14px;">
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:14px;">
+            <div>
+              <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px;">Danh mục *</label>
+              <select id="post-cat-select" style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px;">
+                <option value="books">📚 Sách & Giáo trình UTT</option>
+                <option value="tools">📐 Dụng cụ & Máy tính kỹ thuật</option>
+                <option value="tech">💻 Thiết bị điện tử</option>
+                <option value="dorm">🛏️ Đồ phòng trọ & Gia dụng</option>
+                <option value="fashion">👕 Quần áo & Đồng phục UTT</option>
+                <option value="free">🎁 Đồ 0đ (Cho tặng / Trao đổi)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px;">Cơ sở UTT nhận đồ *</label>
+              <select id="post-campus-select" style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px;">
+                <option value="hanoi">Hà Nội (54 Triều Khúc, Thanh Xuân)</option>
+                <option value="vinhyen">Vĩnh Yên (Vĩnh Phúc)</option>
+                <option value="thainguyen">Thái Nguyên</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:14px;">
+            <div>
+              <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px;">Giá mong muốn (VNĐ)</label>
+              <input id="post-price-input" type="number" placeholder="VD: 50000" style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:4px; font-size:14px;">
+              <label style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:#10b981; font-weight:700; margin-top:6px; cursor:pointer;">
+                <input id="is-free-checkbox" type="checkbox"> Tặng miễn phí 0đ cho bạn cần
+              </label>
+            </div>
+
+            <div>
+              <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px;">Tình trạng đồ</label>
+              <input id="post-condition-input" type="text" placeholder="VD: Mới 95%, nguyên tem..." style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:4px; font-size:14px;">
+            </div>
+          </div>
+
+          <div style="margin-bottom:14px;">
+            <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px;">Tên bạn & Khóa học *</label>
+            <input id="post-author-input" type="text" required placeholder="VD: Nguyễn Văn A (K73 - Khoa CNTT)" style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:4px; font-size:14px;">
+          </div>
+
+          <div style="margin-bottom:20px;">
+            <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px;">Mô tả chi tiết & địa điểm hẹn gặp</label>
+            <textarea id="post-desc-input" rows="3" placeholder="Mô tả công năng, ghi chú, hẹn gặp tại sảnh A1 hoặc thư viện..." style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px;"></textarea>
+          </div>
+
+          <button class="utt-btn-post" type="submit" style="width:100%; justify-content:center; padding:12px;">
+            🚀 Đăng Tin Lên Sàn UTT Ngay
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Chi Tiết Sản Phẩm -->
+  <div id="detail-modal" class="utt-modal" role="dialog" aria-modal="true">
+    <div id="detail-modal-backdrop" class="utt-modal-backdrop"></div>
+    <div class="utt-modal-dialog">
+      <div class="utt-modal-header">
+        <h3>🔍 Chi Tiết Đồ Dùng Sinh Viên</h3>
+        <button class="utt-modal-close close-detail-btn">✕</button>
+      </div>
+      <div class="utt-modal-body">
+        <div style="display:grid; grid-template-columns: 1fr 1.2fr; gap:20px;">
+          <div>
+            <img id="detail-modal-img" src="assets/giao_trinh_utt.jpg" alt="Ảnh đồ dùng" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:8px; border:1px solid #e2e8f0;">
+          </div>
+          <div>
+            <div id="detail-modal-price" style="font-size:24px; font-weight:800; color:var(--utt-orange-primary); margin-bottom:8px;">50.000₫</div>
+            <h3 id="detail-modal-title" style="font-size:16px; font-weight:700; color:var(--utt-blue-dark); line-height:1.4; margin-bottom:12px;">Tên sản phẩm</h3>
+            
+            <div style="background:var(--utt-surface-alt); padding:10px 14px; border-radius:6px; font-size:12px; margin-bottom:12px; display:flex; flex-direction:column; gap:4px;">
+              <span id="detail-modal-author" style="font-weight:700; color:var(--utt-blue-primary);">👤 Người bán</span>
+              <span id="detail-modal-campus" style="color:#64748b;">📍 Cơ sở</span>
+              <span id="detail-modal-condition" style="color:#64748b;">Tình trạng</span>
+            </div>
+
+            <p id="detail-modal-desc" style="font-size:13px; color:#334155; line-height:1.5; margin-bottom:20px;">Mô tả sản phẩm</p>
+
+            <button class="utt-btn-post close-detail-btn" onclick="openChatWithSeller('utt-1')" style="width:100%; justify-content:center;">
+              💬 Nhắn Tin Hẹn Gặp Lấy Đồ
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Chat Trao Đổi Sinh Viên -->
+  <div id="chat-modal" class="utt-modal" role="dialog" aria-modal="true">
+    <div id="chat-modal-backdrop" class="utt-modal-backdrop"></div>
+    <div class="utt-modal-dialog" style="max-width:480px;">
+      <div class="utt-modal-header" style="background:var(--utt-blue-dark); color:#fff;">
+        <div>
+          <h3 id="chat-seller-name" style="color:#fff; font-size:15px;">Chat với Người Bán</h3>
+          <span id="chat-product-summary" style="font-size:11px; color:#ff9d42;">Sản phẩm quan tâm</span>
+        </div>
+        <button class="utt-modal-close close-detail-btn" style="color:#fff;">✕</button>
+      </div>
+      <div style="display:flex; flex-direction:column; height:360px;">
+        <div id="chat-messages-body" style="flex:1; padding:16px; overflow-y:auto; display:flex; flex-direction:column; background:#f8fafc;">
+          <div style="align-self:flex-start; background:#e2e8f0; color:#0f172a; padding:8px 14px; border-radius:12px 12px 12px 0; margin-bottom:8px; font-size:13px; max-width:80%;">
+            Chào bạn! Mình là sinh viên UTT. Bạn quan tâm đến món đồ này đúng không ạ?
+          </div>
+        </div>
+        <div style="padding:10px 14px; border-top:1px solid #e2e8f0; display:flex; gap:8px; background:#fff;">
+          <input id="chat-msg-input" type="text" placeholder="Nhập tin nhắn hẹn gặp..." style="flex:1; padding:8px 12px; border:1px solid #cbd5e1; border-radius:20px; font-size:13px;">
+          <button id="chat-send-btn" type="button" style="background:var(--utt-orange-primary); color:#fff; border:none; padding:8px 16px; border-radius:20px; font-weight:700; cursor:pointer;">Gửi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Phóng To Ảnh Infographic -->
+  <div id="zoom-modal" class="utt-modal">
+    <div id="zoom-modal-backdrop" class="utt-modal-backdrop"></div>
+    <div style="position:relative; z-index:100; max-width:95vw; max-height:95vh;">
+      <button id="close-zoom-btn" style="position:absolute; top:-36px; right:0; background:none; border:none; color:#fff; font-size:28px; cursor:pointer;">✕</button>
+      <img id="zoom-modal-img" src="" alt="Infographic Phóng To" style="max-width:100%; max-height:90vh; border-radius:8px; box-shadow:0 10px 40px rgba(0,0,0,0.5);">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="utt-footer">
+    <div class="utt-container">
+      <div class="utt-footer-grid">
+        <div class="utt-footer-col">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+            <img src="assets/utt_market_banner.jpg" alt="Logo UTT" style="height:36px; border-radius:4px;">
+            <span style="font-weight:800; font-size:16px; color:#fff;">UTT STUDENT MARKET</span>
+          </div>
+          <p style="line-height:1.6; font-size:12px; color:#94a3b8; margin-bottom:12px;">
+            Dự án xây dựng nền tảng chợ sinh viên số trực thuộc <strong>Nhóm 4</strong> - Trường Đại học Công nghệ Giao thông Vận tải. Hướng đến mục tiêu bảo vệ môi trường, giảm lãng phí tài sản học tập và thúc đẩy tinh thần tương trợ sinh viên.
+          </p>
+          <div style="font-size:12px; color:#ff9d42; font-weight:600;">
+            Slogan: "Mua bán thông minh – Sinh viên cùng phát triển"
+          </div>
+        </div>
+
+        <div class="utt-footer-col">
+          <h4>3 Cơ Sở Đào Tạo UTT</h4>
+          <ul class="utt-footer-links">
+            <li>📍 <strong>Cơ sở Hà Nội:</strong> Số 54 Triều Khúc, Thanh Xuân, Hà Nội</li>
+            <li>📍 <strong>Cơ sở Vĩnh Yên:</strong> Phường Đồng Tâm, TP. Vĩnh Yên, Vĩnh Phúc</li>
+            <li>📍 <strong>Cơ sở Thái Nguyên:</strong> Phường Tân Thịnh, TP. Thái Nguyên</li>
+          </ul>
+        </div>
+
+        <div class="utt-footer-col">
+          <h4>Nội Dung Báo Cáo</h4>
+          <ul class="utt-footer-links">
+            <li><a href="#section-overview" onclick="document.querySelectorAll('.utt-subnav-link')[0].click()">Tổng quan & Sứ mệnh</a></li>
+            <li><a href="#section-problems" onclick="document.querySelectorAll('.utt-subnav-link')[1].click()">Vấn đề & Giải pháp</a></li>
+            <li><a href="#section-bmc" onclick="document.querySelectorAll('.utt-subnav-link')[2].click()">Business Model Canvas</a></li>
+            <li><a href="#section-process" onclick="document.querySelectorAll('.utt-subnav-link')[3].click()">Quy trình 11 bước</a></li>
+            <li><a href="#section-finance" onclick="document.querySelectorAll('.utt-subnav-link')[4].click()">Tài chính & Doanh thu</a></li>
+          </ul>
+        </div>
+
+        <div class="utt-footer-col">
+          <h4>Hỗ Trợ & Khiếu Nại</h4>
+          <ul class="utt-footer-links">
+            <li>📧 Email: studentmarket@utt.edu.vn</li>
+            <li>📞 Hotline hỗ trợ SV: 1900 xxxx</li>
+            <li>🛡️ Xác thực thẻ SV tại phòng CTSV</li>
+            <li>⚖️ Quy chế xử lý tin giả & lừa đảo</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="utt-footer-bottom">
+        <p>© 2026 UTT Student Market. Dự án thực hiện bởi Nhóm 4 — Trường Đại học Công nghệ Giao thông Vận tải.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
