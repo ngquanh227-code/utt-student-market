@@ -16,51 +16,39 @@
 </head>
 <body>
 
-  <!-- Top Utility Header -->
+  <!-- Main Header -->
   <header class="utt-header" role="banner">
-    <div class="utt-top-utility">
-      <div class="utt-container utt-top-utility-inner">
-        <div class="utt-utility-left">
-          <span>🏫 <strong>Trường ĐH Công Nghệ Giao Thông Vận Tải (UTT)</strong></span>
-          <span>•</span>
-          <span>Dự án khởi nghiệp sinh viên: <strong>Nhóm 4</strong></span>
-          <span>•</span>
-          <span class="utt-campus-badge">📍 3 Cơ sở: Hà Nội (Triều Khúc) | Vĩnh Yên | Thái Nguyên</span>
-        </div>
-        <div style="display:flex; align-items:center; gap:16px;">
-          <span style="color:#94a3b8; font-size:11px;">100% Xác thực thẻ SV UTT</span>
-          <span style="color:#64748b;">|</span>
-          <a href="#section-overview" onclick="document.querySelectorAll('.utt-mode-tab')[1].click()" style="color:#ff9d42; font-weight:600; text-decoration:none;">📑 Xem Báo Cáo Ý Tưởng</a>
-        </div>
-      </div>
-    </div>
-
     <!-- Main Navigation Bar -->
     <div class="utt-container">
       <div class="utt-nav-bar">
-        <!-- Logo & Brand -->
-        <a href="index.html" class="utt-brand-logo">
-          <img src="assets/utt_market_banner.jpg" alt="Logo UTT Student Market" class="utt-logo-img">
-          <div class="utt-brand-text">
-            <span class="utt-brand-name">UTT STUDENT <span>MARKET</span></span>
-            <span class="utt-brand-slogan">Mua bán thông minh – Sinh viên cùng phát triển</span>
+        <div class="utt-nav-main-row">
+          <!-- Logo & Brand -->
+          <a href="index.html" class="utt-brand-logo">
+            <img src="assets/utt_market_banner.jpg" alt="Logo UTT Student Market" class="utt-logo-img">
+            <div class="utt-brand-text">
+              <span class="utt-brand-name">UTT STUDENT <span>MARKET</span></span>
+              <span class="utt-brand-slogan">Mua bán thông minh – Sinh viên cùng phát triển</span>
+            </div>
+          </a>
+
+          <!-- Post Action Button -->
+          <div class="utt-header-actions">
+            <button id="header-post-btn" class="utt-btn-post" type="button">
+              <span class="post-btn-full">➕ Đăng Tin Thanh Lý</span>
+              <span class="post-btn-short">➕ Đăng tin</span>
+            </button>
           </div>
-        </a>
+        </div>
 
         <!-- Switcher: Live Marketplace vs Project Report -->
         <div class="utt-app-modes" role="tablist">
           <button class="utt-mode-tab active" data-mode="storefront" role="tab">
-            🛍️ Chợ Sinh Viên UTT (Live Demo)
+            <span class="tab-text-full">🛍️ Chợ Sinh Viên UTT (Live Demo)</span>
+            <span class="tab-text-short">🛍️ Chợ Sinh Viên</span>
           </button>
           <button class="utt-mode-tab" data-mode="report" role="tab">
-            📋 Báo Cáo & Mô Hình Dự Án
-          </button>
-        </div>
-
-        <!-- Post Action Button -->
-        <div class="utt-header-actions">
-          <button id="header-post-btn" class="utt-btn-post" type="button">
-            ➕ Đăng Tin Thanh Lý
+            <span class="tab-text-full">📋 Báo Cáo & Mô Hình Dự Án</span>
+            <span class="tab-text-short">📋 Báo Cáo Dự Án</span>
           </button>
         </div>
       </div>
@@ -175,7 +163,7 @@
         <strong>Đơn vị thực hiện:</strong> Dự án nhóm 4 — Trường Đại học Công nghệ Giao thông Vận tải (UTT).
       </p>
 
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; margin-top:24px;">
+      <div class="report-two-cols">
         <div style="background:var(--utt-surface-alt); padding:20px; border-radius:8px; border-left:4px solid var(--utt-blue-primary);">
           <h3 style="font-size:16px; font-weight:700; color:var(--utt-blue-dark); margin-bottom:8px;">🎯 1.1. Tầm nhìn</h3>
           <p style="font-size:13px; line-height:1.6; color:var(--utt-text-secondary);">
@@ -206,7 +194,8 @@
         Trong môi trường sinh viên UTT, nhu cầu mua bán và trao đổi diễn ra liên tục nhưng bị phân tán trên các nhóm Facebook, Zalo khiến bài đăng nhanh trôi và tiềm ẩn nhiều nguy cơ lừa đảo.
       </p>
 
-      <table class="report-data-table" style="margin-top:24px;">
+      <div class="report-table-responsive">
+        <table class="report-data-table">
         <thead>
           <tr>
             <th style="width:25%;">Vấn đề thực tế</th>
@@ -246,7 +235,8 @@
             <td><span class="table-tag tag-success">Đã giải quyết</span> Tạo chuyên mục [Cho - Tặng 0đ] và trao đổi đồ dùng, khuyến khích tái sử dụng.</td>
           </tr>
         </tbody>
-      </table>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -509,7 +499,8 @@
         <h3 style="font-size:16px; font-weight:700; color:var(--utt-blue-dark); margin-bottom:16px;">
           💵 Kịch Bản Doanh Thu Giả Định (1 Tháng)
         </h3>
-        <table class="report-data-table" style="margin-bottom:12px;">
+        <div class="report-table-responsive">
+          <table class="report-data-table">
           <thead>
             <tr>
               <th>Hạng mục</th>
@@ -542,7 +533,8 @@
               <td style="font-weight:800; color:var(--utt-blue-dark);">66.000.000đ/năm</td>
             </tr>
           </tbody>
-        </table>
+          </table>
+        </div>
         <p style="font-size:11px; color:var(--utt-text-muted); font-style:italic;">* Đây là kịch bản tài chính giả định nghiên cứu của Nhóm 4, không phải cam kết doanh thu thực tế.</p>
       </div>
 
@@ -650,7 +642,8 @@
     <h3 style="font-size:18px; font-weight:800; color:var(--utt-blue-dark); margin-bottom:12px;">
       📈 9 Chỉ Số Đánh Giá Hiệu Quả (KPIs)
     </h3>
-    <table class="report-data-table">
+    <div class="report-table-responsive">
+      <table class="report-data-table">
       <thead>
         <tr>
           <th>Chỉ số đo lường</th>
@@ -706,6 +699,7 @@
         </tr>
       </tbody>
     </table>
+  </div>
   </section>
 
   <!-- 7. RỦI RO & KẾT LUẬN -->
@@ -717,7 +711,8 @@
         Xác định trước các rủi ro tiềm ẩn giúp Nhóm 4 chủ động chuẩn bị các phương án xử lý kịp thời và đảm bảo dự án phát triển lâu dài.
       </p>
 
-      <table class="report-data-table" style="margin-top:20px;">
+      <div class="report-table-responsive">
+        <table class="report-data-table">
         <thead>
           <tr>
             <th style="width:30%;">Rủi ro tiềm ẩn</th>
@@ -750,7 +745,8 @@
             <td>Chỉ thu thập dữ liệu tối thiểu cần thiết, mã hóa thông tin liên lạc và xây dựng chính sách bảo mật tuân thủ quy định.</td>
           </tr>
         </tbody>
-      </table>
+        </table>
+      </div>
 
       <div style="background:#fff7ed; border-left:4px solid var(--utt-orange-primary); padding:20px; border-radius:6px; margin-top:24px;">
         <h3 style="font-size:16px; font-weight:800; color:var(--utt-blue-dark); margin-bottom:8px;">
@@ -782,7 +778,7 @@
             <input id="post-title-input" type="text" required placeholder="VD: Sách Sức bền vật liệu UTT / Máy tính Casio FX580..." style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:4px; font-size:14px;">
           </div>
 
-          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:14px;">
+          <div class="utt-form-row">
             <div>
               <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px;">Danh mục *</label>
               <select id="post-cat-select" style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px;">
@@ -805,7 +801,7 @@
             </div>
           </div>
 
-          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:14px;">
+          <div class="utt-form-row">
             <div>
               <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px;">Giá mong muốn (VNĐ)</label>
               <input id="post-price-input" type="number" placeholder="VD: 50000" style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:4px; font-size:14px;">
@@ -847,7 +843,7 @@
         <button class="utt-modal-close close-detail-btn">✕</button>
       </div>
       <div class="utt-modal-body">
-        <div style="display:grid; grid-template-columns: 1fr 1.2fr; gap:20px;">
+        <div class="detail-modal-layout">
           <div>
             <img id="detail-modal-img" src="assets/giao_trinh_utt.jpg" alt="Ảnh đồ dùng" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:8px; border:1px solid #e2e8f0;">
           </div>
@@ -905,6 +901,12 @@
       <img id="zoom-modal-img" src="" alt="Infographic Phóng To" style="max-width:100%; max-height:90vh; border-radius:8px; box-shadow:0 10px 40px rgba(0,0,0,0.5);">
     </div>
   </div>
+
+  <!-- Floating Action Button for Mobile -->
+  <button id="mobile-fab-post" class="utt-mobile-fab" type="button" aria-label="Đăng tin thanh lý">
+    <span>➕</span>
+    <span>Đăng Tin</span>
+  </button>
 
   <!-- Footer -->
   <footer class="utt-footer">

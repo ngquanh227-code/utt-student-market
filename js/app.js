@@ -139,15 +139,18 @@ function initTabNavigation() {
   const subnavBar = document.getElementById('report-subnav-bar');
 
   function showSection(sectionId) {
+    const fabBtn = document.getElementById('mobile-fab-post');
     if (sectionId === 'storefront') {
       storefrontView.style.display = 'block';
       reportViews.forEach(v => v.classList.remove('active'));
       if (subnavBar) subnavBar.style.display = 'none';
+      if (fabBtn) fabBtn.style.display = '';
       mainTabs[0].classList.add('active');
       mainTabs[1].classList.remove('active');
     } else {
       storefrontView.style.display = 'none';
       if (subnavBar) subnavBar.style.display = 'block';
+      if (fabBtn) fabBtn.style.display = 'none';
       mainTabs[1].classList.add('active');
       mainTabs[0].classList.remove('active');
 
@@ -185,16 +188,20 @@ function initTabNavigation() {
 function initPostingModal() {
   const postModal = document.getElementById('posting-modal');
   const openBtn = document.getElementById('header-post-btn');
+  const fabBtn = document.getElementById('mobile-fab-post');
   const closeBtn = document.getElementById('close-post-modal-btn');
   const backdrop = document.getElementById('post-modal-backdrop');
   const postForm = document.getElementById('student-post-form');
   const freeCheck = document.getElementById('is-free-checkbox');
   const priceInput = document.getElementById('post-price-input');
 
-  openBtn?.addEventListener('click', () => {
-    postModal.classList.add('open');
+  const openModal = () => {
+    postModal?.classList.add('open');
     document.body.style.overflow = 'hidden';
-  });
+  };
+
+  openBtn?.addEventListener('click', openModal);
+  fabBtn?.addEventListener('click', openModal);
 
   const closeModal = () => {
     postModal?.classList.remove('open');
